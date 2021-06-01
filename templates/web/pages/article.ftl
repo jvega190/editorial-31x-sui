@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
 
     <link rel="stylesheet" href="/static-assets/sui2/alt/styles/main.css"/>
-    <link rel="stylesheet" href="/static-assets/sui/styles/editor-content.css"/>
+    <link rel="stylesheet" href="/static-assets/sui2/alt/styles/editor-content.css"/>
 
     <!--[if lte IE 8]>
     <script src="/static-assets/js/ie/html5shiv.js"></script><![endif]-->
