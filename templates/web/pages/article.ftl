@@ -131,8 +131,6 @@
         (profile) {
         var director = crafter.social.getDirector();
 
-        // director.listenTo(director,'crater.social.event.no.comments.action' , function(){alert('Go TO Login')});
-
         director.socialise({
             target: '#${contentModel.objectId}',
             context: 'f5b143c2-f1c0-4a10-b56e-f485f00d3fe9',

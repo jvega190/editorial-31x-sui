@@ -161,10 +161,6 @@
 				}
 			}
 		});
-
-		// director.listenTo(director,'crater.social.event.no.comments.action' , function() {
-		// 	alert('Please login to comment.');
-		// });
 	}
 </script>
 
