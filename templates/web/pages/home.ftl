@@ -107,6 +107,7 @@
 
 
 <script>
+    window.CKEDITOR_BASEPATH = '/libs/ckeditor/';
 
     var crafterSocial_cfg = {
         'url.service': 'http://localhost:8080/crafter-social/api/3/',
