@@ -35,6 +35,7 @@
             <!-- Header -->
             <@renderComponent component=contentModel.header_o.item />
 
+            <li class="active"><a href="javascript:crafter.social.getDirector().authenticate()" id="login" class="log-event">Login</a></li>
             <h1 id="sui-test">Using ui build</h1>
 
             <!-- Banner -->
