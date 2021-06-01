@@ -11,6 +11,10 @@
     <title>${contentModel.title_t}</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+
+    <link rel="stylesheet" href="/static-assets/sui2/alt/styles/main.css"/>
+    <link rel="stylesheet" href="/static-assets/sui/styles/editor-content.css"/>
+
     <!--[if lte IE 8]>
     <script src="/static-assets/js/ie/html5shiv.js"></script><![endif]-->
     <link rel="stylesheet" href="/static-assets/css/main.css?v=${siteContext.siteName}"/>
@@ -19,9 +23,6 @@
     <!--[if lte IE 8]>
     <link rel="stylesheet" href="/static-assets/css/ie8.css"/><![endif]-->
     <link rel="stylesheet" href="/static-assets/css/jquery-ui.min.css"/>
-
-<#--    <link rel="stylesheet" href="/static-assets/sui2/alt/styles/main.css"/>-->
-    <link rel="stylesheet" href="/static-assets/sui/styles/main.css"/>
 </head>
 
 <body>
@@ -78,18 +79,41 @@
 <script>
 
     var crafterSocial_cfg = {
+        'comments.acceptTerms'          : false, // if user has to accept terms before posting or replying comment
         'url.service': 'http://localhost:8080/crafter-social/api/3/',
         'url.security.value': 'http://localhost:8080/crafter-social/crafter-security-login',
         'url.security.active': 'http://localhost:8080/crafter-social/crafter-security-current-auth',
         'url.base': '/',
-        // 'url.templates': '/static-assets/sui2/alt/templates/',
-        'url.templates': '/static-assets/sui/templates/',
-
+        'url.templates': '/static-assets/sui2/alt/templates/'
     };
+
+    function crafterSocial_onAppReady ( director, CrafterSocial ) {
+
+        CrafterSocial.$.extend(CrafterSocial.string.LOCALE, {
+            'commentable.view-comment': 'View & Comment',
+            'commentable.notify-comment': 'Notify on Reply',
+            'popover.no-comment': '(no comments)',
+            'discussion.title': 'Discussion',
+            'discussion.comment': 'Be the first to comment!',
+            'discussion.login-comment': '',
+            'options.options': 'Options',
+            'options.inline': 'Inline View',
+            'options.lightbox': 'Lightbox View',
+            'options.bubble': 'Bubble View',
+            'options.refresh': 'Refresh',
+            'options.close': 'Close',
+            'commenting.submissionLabel': 'Your submission will not appear until approved by the blog admin.',
+            'commenting.agreeTermsLabel': 'I have read and agree to Terms of Use of this blog',
+            'commenting.agreeTermsLinkText': 'LINK HERE',
+            'commenting.agreeTermsLink': '#',
+            'comments.flag': 'Report',
+            'commenting.attachmentsTip': 'Adding photos? Post your comment then add them to your post.'
+        });
+
+    }
 </script>
 
-<#--<script src="/static-assets/sui2/alt/scripts/social.js"></script>-->
-<script src="/static-assets/sui/scripts/social.js"></script>
+<script src="/static-assets/sui2/alt/scripts/social.js"></script>
 
 <script>
     $.ajax({
@@ -107,7 +131,7 @@
         (profile) {
         var director = crafter.social.getDirector();
 
-        director.listenTo(director,'crater.social.event.no.comments.action' , function(){alert('Go TO Login')});
+        // director.listenTo(director,'crater.social.event.no.comments.action' , function(){alert('Go TO Login')});
 
         director.socialise({
             target: '#${contentModel.objectId}',
