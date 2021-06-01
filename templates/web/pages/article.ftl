@@ -77,17 +77,17 @@
 <script src="/static-assets/js/main.js?v=${siteContext.siteName}"></script>
 
 <script>
-
     var crafterSocial_cfg = {
         'comments.acceptTerms'          : false, // if user has to accept terms before posting or replying comment
         'url.service': 'http://localhost:8080/crafter-social/api/3/',
         'url.security.value': 'http://localhost:8080/crafter-social/crafter-security-login',
         'url.security.active': 'http://localhost:8080/crafter-social/crafter-security-current-auth',
-        'url.base': '/',
+        'url.base': '/static-assets/sui2/alt/',
         'url.templates': '/static-assets/sui2/alt/templates/'
     };
 
     function crafterSocial_onAppReady ( director, CrafterSocial ) {
+        window.CKEDITOR.plugins.basePath = '/static-assets/sui/libs/ckeditor/plugins/';
 
         CrafterSocial.$.extend(CrafterSocial.string.LOCALE, {
             'commentable.view-comment': 'View & Comment',

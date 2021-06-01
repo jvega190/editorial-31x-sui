@@ -108,13 +108,12 @@
 
 
 <script>
-    window.CKEDITOR_BASEPATH = '/libs/ckeditor/';
-
     var crafterSocial_cfg = {
+        'comments.acceptTerms'          : false, // if user has to accept terms before posting or replying comment
         'url.service': 'http://localhost:8080/crafter-social/api/3/',
         'url.security.value': 'http://localhost:8080/crafter-social/crafter-security-login',
         'url.security.active': 'http://localhost:8080/crafter-social/crafter-security-current-auth',
-        'url.base': '/',
+        'url.base': '/static-assets/sui/',
         'url.templates': '/static-assets/sui/templates/',
 
     };
@@ -133,6 +132,7 @@
 
 <script>
 	function crafterSocial_onAppReady ( director, CrafterSocial ) {
+	    window.CKEDITOR.plugins.basePath = '/static-assets/sui/libs/ckeditor/plugins/';
 
         CrafterSocial.$.extend(CrafterSocial.string.LOCALE,{
             months: [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ],
